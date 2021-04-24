@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:you_tube_ui_flutter/side_bar.dart';
+import 'package:you_tube_ui_flutter/top_bar.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,7 +14,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.white,
       ),
-      home: Youtube(),
+      home: Scaffold(
+        body: Youtube(),
+      ),
     );
   }
 }
@@ -19,112 +24,50 @@ class MyApp extends StatelessWidget {
 class Youtube extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: IconButton(
-            icon: Icon(
-              Icons.menu,
-              color: Colors.grey[700],
-            ),
-            onPressed: () {},
-          ),
-        ),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Column(
+      children: [
+        TopBar(),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(
-              "images/youtube-logo.png",
-              width: 100.0,
-              height: 50.0,
-            ),
-            Table(
-              border: TableBorder.all(color: Colors.grey[800]),
+            SideBar(),
+            // Column(
+            //   children: [
+            //     Container(
+            //       width: 240,
+            //         child: Divider(
+            //           thickness: 600,
+            //           height: 600,
+            //           color: Colors.grey,
+            //         ))
+            //   ],
+            // ),
+            Column(
               children: [
-                TableRow(children: [
-                  Text("one"),
-                  Text("one"),
-                  Text("one"),
-                ]
-                ),
-                TableRow(children: [
-                  Text("one"),
-                  Text("one"),
-                  Text("one"),
-                ]
-                ),
-              ],
-            ),
-            SizedBox()
-          ],
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: IconButton(
-                icon: Icon(
-                  Icons.video_call,
-                  color: Colors.grey[700],
-                ),
-                onPressed: () {}),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: IconButton(
-                icon: Icon(
-                  Icons.apps,
-                  color: Colors.grey[700],
-                ),
-                onPressed: () {}),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Stack(
-              children: [
-                new IconButton(
-                    icon: Icon(
-                      Icons.notifications,
-                      color: Colors.grey[700],
-                    ),
-                    onPressed: () {}),
-                new Positioned(
-                  right: 0,
-                  child: Container(
-                    padding: EdgeInsets.all(1),
-                    decoration: new BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.circular(6),
-                    ),
-                    constraints: BoxConstraints(
-                      minWidth: 12,
-                      minHeight: 12,
-                    ),
-                    child: new Text(
-                      "23",
-                      style: new TextStyle(
-                        color: Colors.white,
-                        fontSize: 8,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
+                Container(
+                  width: 1115,
+                  child: Divider(
+                    height: 1,
                   ),
+                ),
+                SizedBox(
+                  height: 56,
+                ),
+                Container(
+                  width: 1115,
+                  child: Divider(
+                    height: 1,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(18.0),
+                  child: Text("Videos Here"),
                 )
               ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: CircleAvatar(
-              //radius: 10,
-              backgroundColor: Colors.black,
-              //backgroundImage: AssetImage("rr"),
-            ),
-          ),
-        ],
-      ),
-      drawer: Drawer(),
+            )
+          ],
+        ),
+      ],
     );
   }
 }
