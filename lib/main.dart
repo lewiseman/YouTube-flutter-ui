@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:you_tube_ui_flutter/content.dart';
 import 'package:you_tube_ui_flutter/side_bar.dart';
 import 'package:you_tube_ui_flutter/top_bar.dart';
 
@@ -32,6 +33,7 @@ class Youtube extends StatelessWidget {
           children: [
             SideBar(),
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                   width: 1115,
@@ -95,10 +97,7 @@ class Youtube extends StatelessWidget {
                     height: 1,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(18.0),
-                  child: Text("Videos Here"),
-                )
+                Content(),
               ],
             )
           ],
