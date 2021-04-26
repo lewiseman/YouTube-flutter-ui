@@ -58,10 +58,10 @@ class Youtube extends StatelessWidget {
                                 child: Chip(
                                   label: Text("All"),
                                   labelStyle: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.white,
                                       fontWeight: FontWeight.bold),
                                   side: BorderSide(width: 1, color: Colors.grey[400]),
-                                  backgroundColor: Colors.black12,
+                                  backgroundColor: Colors.black54,
                                 ),
                               ),
                               chipList()
