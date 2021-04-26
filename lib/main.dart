@@ -27,7 +27,7 @@ class Youtube extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(color: Colors.white,child: TopBar()),
+        Container(color: Colors.white, child: TopBar()),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -50,7 +50,8 @@ class Youtube extends StatelessWidget {
                         width: 1020,
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
-                          physics: ScrollPhysics(parent: BouncingScrollPhysics()),
+                          physics:
+                              ScrollPhysics(parent: BouncingScrollPhysics()),
                           child: Row(
                             children: [
                               Padding(
@@ -60,7 +61,8 @@ class Youtube extends StatelessWidget {
                                   labelStyle: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold),
-                                  side: BorderSide(width: 1, color: Colors.grey[400]),
+                                  side: BorderSide(
+                                      width: 1, color: Colors.grey[400]),
                                   backgroundColor: Colors.black54,
                                 ),
                               ),
@@ -72,9 +74,7 @@ class Youtube extends StatelessWidget {
                       Container(
                         width: 106,
                         height: 56,
-                        decoration: BoxDecoration(
-                          color: Colors.white
-                        ),
+                        decoration: BoxDecoration(color: Colors.white),
                         child: Padding(
                           padding: const EdgeInsets.only(left: 53),
                           child: Container(
